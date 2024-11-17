@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Conversor</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        body{
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position-x: 50%;
+            background-position-y: 10%;
+        }
+        table, tr, td{
+            text-align: right;
+            font-size: 40px;
+            border-collapse: collapse;
+            border-color: black;
+            border: 3px solid black;
+            font-family: Georgia, serif;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .botão{
+            font-size: 40px;
+            font-family: Georgia, serif;
+            background-color: transparent;
+            border-color: transparent;
+            cursor: pointer;
+        }
+        .p{
+            font-size: 20px;
+            font-family: Georgia, serif;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <p id="Celcius" class="p"></p>
+    <p id="Fahrenheit" class="p"></p>
+    <p id="Kelvin" class="p"></p>
+<script type="text/javascript">
+function cf(){
+var c,a,b,res_CF
+c = parseFloat(document.getElementById("Celcius_F").value)
+a = 1.8
+b = 32
+res_CF = (c*a+b).toFixed(2)
+document.getElementById("resultado_CF").value = res_CF
+if (res_CF<32) {
+    document.body.style.backgroundImage="url('img/sol\ azul.gif')";
+}else if (res_CF>86){
+   document.body.style.backgroundImage="url('img/sol\ vermelho.gif')";
+} else {
+    document.body.style.backgroundImage="url('img/sol.gif')";
+}
+//transformar celsius em Fahrenheit
+   }
+function fc(){
+    var f,a,b,res_FC
+    f= parseFloat(document.getElementById("Fahrenheit_C").value)
+    a = 1.8
+    b = 32
+    res_FC = ((f-b)/a).toFixed(2)
+    document.getElementById("resultado_FC").value = res_FC
+    if (res_FC<0) {
+    document.body.style.backgroundImage="url('img/sol\ azul.gif')";
+}else if (res_FC>30){
+   document.body.style.backgroundImage="url('img/sol\ vermelho.gif')";
+} else {
+    document.body.style.backgroundImage="url('img/sol.gif')";
+}
+    //transformar Fahrenheit em celsius
+}
+function ck(){
+    var c,a,res_CK
+    c= parseFloat(document.getElementById("Celcius_K").value)
+    a = 273.15
+    res_CK = (c+a).toFixed(2)
+    document.getElementById("resultado_CK").value = res_CK
+    if (res_CK<273.15) {
+    document.body.style.backgroundImage="url('img/sol\ azul.gif')";
+}else if (res_CK>303.15){
+   document.body.style.backgroundImage="url('img/sol\ vermelho.gif')";
+} else {
+    document.body.style.backgroundImage="url('img/sol.gif')";
+}
+    //transformar celsius em Kelvin
+}
+function kc(){
+    var k,a,res_KC
+    k= parseFloat(document.getElementById("Kelvin_C").value)
+    a = 273.15
+    res_KC = (k-a).toFixed(2)
+    document.getElementById("resultado_KC").value = res_KC
+    if (res_KC<0) {
+    document.body.style.backgroundImage="url('img/sol\ azul.gif')";
+}else if (res_KC>30){
+   document.body.style.backgroundImage="url('img/sol\ vermelho.gif')";
+} else {
+    document.body.style.backgroundImage="url('img/sol.gif')";
+}
+    //transformar Kelvin em Celsius
+}
+function fk(){
+    var f,a,b,c,res_FK
+    f= parseFloat(document.getElementById("Fahrenheit_K").value)
+    a = 273.15
+    b = 1.8
+    c = 32
+    res_FK = (((f-c)/b)+a).toFixed(2)
+    document.getElementById("resultado_FK").value = res_FK
+    if (res_FK<273.15) {
+    document.body.style.backgroundImage="url('img/sol\ azul.gif')";
+}else if (res_FK>303.15){
+   document.body.style.backgroundImage="url('img/sol\ vermelho.gif')";
+} else {
+    document.body.style.backgroundImage="url('img/sol.gif')";
+}
+    //transformar Fahrenheit em Kelvin
+}
+function kf(){
+    var k,a,b,c,res_KF
+    k= parseFloat(document.getElementById("Kelvin_F").value)
+    a = 273.15
+    b = 1.8
+    c = 32
+    res_KF = (((k-a)*b)+c).toFixed(2)
+    document.getElementById("resultado_KF").value = res_KF
+    if (res_KF<32) {
+    document.body.style.backgroundImage="url('img/sol\ azul.gif')";
+}else if (res_KF>86){
+   document.body.style.backgroundImage="url('img/sol\ vermelho.gif')";
+} else {
+    document.body.style.backgroundImage="url('img/sol.gif')";
+}
+    //transformar Kelvin em Fahrenheit
+}
+    let y = parseFloat(prompt("Insira um valor para a temperatura"));
+    let a=1.8
+    let b=32
+    let res_1=(y*a+b).toFixed(2)
+    let c=273.15
+    let res_2=(y+c).toFixed(2)
+    document.write(y)
+    document.getElementById("Celcius").innerHTML = "A temperatura inicial da página é "+ (y) +"ºC.";
+    document.getElementById("Fahrenheit").innerHTML = "A temperatura inicial da página em é "+ Math.abs(res_1) +"ºF.";
+    document.getElementById("Kelvin").innerHTML = "A temperatura inicial da página é "+ Math.abs(res_2) +"ºK.";
+    if (res_1<32) {
+    document.body.style.backgroundImage="url('img/sol\ azul.gif')";
+}else if (res_1>86){
+   document.body.style.backgroundImage="url('img/sol\ vermelho.gif')";
+} else {
+    document.body.style.backgroundImage="url('img/sol.gif')";
+}
+</script>
+<center>
+<table>
+    <tr><td>
+<form name="transformar celcius em Fahrenheit">
+    <label for="input_c">Celcius</label>
+    <input type="number" id="Celcius_F" oninput="cf()" min="-273.15"></td>
+    <td><button type="button" class=botão class="botão" onclick="cf()">Calcular</button>
+    <td><label for="output_f">Fahrenheit</label>
+    <input type="number" id="resultado_CF" readonly></td>
+</form>
+</td>
+</tr>
+<tr><td>
+<form>
+    <label for ="input_f">Fahrenheit</label>
+    <input type="number" id="Fahrenheit_C" min="-459.67"></td>
+    <td><button type="button" class=botão ondblclick="fc()">Calcular</button></td>
+    <td><label for="output_c">Celcius</label>
+    <input type="number" id="resultado_FC" readonly></td>
+</form>
+</tr>
+<tr><td>
+<form>
+    <label for="input_c">Celcius</label>
+    <input type="number" id="Celcius_K" min="-273.15"></td>
+    <td><button type="button" class=botão onmousemove="ck()">Calcular</button></td>
+    <td><label for="output_k">Kelvin</label>
+    <input type="number" id="resultado_CK" readonly></td>
+</form>
+</tr>
+<tr><td>
+<form>
+    <label for="input_k">Kelvin</label>
+    <input type="number" id="Kelvin_C" min="0"></td>
+    <td><button type="button" class=botão onpointerleave="kc()">Calcular</button></td>
+    <td><label for="output_c">Celcius</label>
+    <input type="number" id="resultado_KC" readonly></td>
+</form>
+</tr>
+<tr><td>
+<form>
+    <label for="input_f">Fahrenheit</label>
+    <input type="number" id="Fahrenheit_K" min="-459.67"></td>
+    <td><button type="button" class=botão oncontextmenu="fk()">Calcular</button></td>
+    <td><label for="output_k">Kelvin</label>
+    <input type="number" id="resultado_FK" readonly></td>
+</form>
+</tr><td>
+<form>
+    <label for="input_k">Kelvin</label>
+    <input type="number" id="Kelvin_F" min="0"></td>
+    <td><button type="button" class=botão onclick="kf()">Calcular</button></td>
+    <td><label for="output_f">Fahrenheit</label>
+    <input type="number" id="resultado_KF" readonly></td>
+</form>
+</tr>
+</table>
+</center>
+<p><a href="http://www.conversorfacil.com.br/conversor-de-medidas/temperatura">http://www.conversorfacil.com.br/conversor-de-medidas/temperatura</a></p>
+</body>
+</html>
